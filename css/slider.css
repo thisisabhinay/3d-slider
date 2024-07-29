@@ -37,6 +37,7 @@
   transform-style: preserve-3d;
   transform: perspective(62.5rem);
   animation: autoRun 40s linear infinite;
+  z-index: 2;
 }
 
 .banner .slider .item {
@@ -56,11 +57,11 @@
 
 @keyframes autoRun {
   from {
-    transform: perspective(62.5rem) rotateX(-15deg) rotateY(0deg);
+    transform: perspective(62.5rem) rotateX(-12deg) rotateY(0deg);
   }
 
   to {
-    transform: perspective(62.5rem) rotateX(-15deg) rotateY(360deg);
+    transform: perspective(62.5rem) rotateX(-12deg) rotateY(360deg);
   }
 }
 
@@ -99,7 +100,7 @@
 .banner .content .author {
   font-family: "Poppins Bold";
   text-align: right;
-  max-width: 12.5rem;
+  max-width: min-content;
 }
 
 .banner .content .description {
@@ -122,4 +123,51 @@
   background-repeat: no-repeat;
   background-position: top center;
   z-index: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 160px;
+    height: 200px;
+    left: calc(50% - 80px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(300px);
+  }
+  .banner .content h1 {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 10px 20px #000;
+    font-size: 7em;
+  }
+  .banner .content .author {
+    color: #fff;
+    padding: 20px;
+    text-shadow: 0 10px 20px #000;
+    z-index: 2;
+    max-width: unset;
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 100px;
+    height: 150px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(180px);
+  }
+  .banner .content h1 {
+    font-size: 5em;
+  }
 }
