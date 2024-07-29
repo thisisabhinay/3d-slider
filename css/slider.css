@@ -19,7 +19,9 @@
 .banner .slider .item {
   position: absolute;
   inset:  0 0 0 0;
-  transform: translateZ(34.38rem)
+  transform: 
+    rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(34.38rem)
 }
 
 .banner .slider .item img {
