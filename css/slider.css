@@ -63,10 +63,10 @@
 /* Keyframe animation for auto-rotation */
 @keyframes autoRun {
   from {
-    transform: perspective(62.5rem) rotateX(-12deg) rotateY(0deg);
+    transform: perspective(62.5rem) rotateX(-16deg) rotateY(0deg);
   }
   to {
-    transform: perspective(62.5rem) rotateX(-12deg) rotateY(360deg);
+    transform: perspective(62.5rem) rotateX(-16deg) rotateY(360deg);
   }
 }
 
