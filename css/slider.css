@@ -1,5 +1,23 @@
-@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
-@import url("https://fonts.cdnfonts.com/css/poppins");
+@font-face {
+  font-family: "ICA Rubrik Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("ICA Rubrik Bold"), url("/fonts/ICARubrikBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Poppins Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins Regular"), url("/fonts/Poppins-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins Bold"), url("/fonts/Poppins-Bold.woff") format("woff");
+}
 
 .banner {
   width: 100%;
@@ -61,7 +79,7 @@
 }
 
 .banner .content h1 {
-  font-family: "ICA Rubrik";
+  font-family: "ICA Rubrik Bold";
   font-size: 16em;
   line-height: 1em;
   color: #25283b;
@@ -78,9 +96,14 @@
 }
 
 .banner .content .author {
-  font-family: Poppins;
+  font-family: "Poppins Bold";
   text-align: right;
-  max-width: 200px;
+  max-width: 12.5rem
+}
+
+.banner .content .description {
+  font-family: "Poppins Regular";
+  text-align: right;
 }
 
 .banner .content h2 {
