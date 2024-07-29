@@ -36,7 +36,7 @@
   left: calc(50% - 6.25rem);
   transform-style: preserve-3d;
   transform: perspective(62.5rem);
-  animation: autoRun 30s linear infinite;
+  animation: autoRun 40s linear infinite;
 }
 
 .banner .slider .item {
