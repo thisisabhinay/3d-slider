@@ -1,3 +1,4 @@
+/* Custom font declarations */
 @font-face {
   font-family: "ICA Rubrik Bold";
   font-style: normal;
@@ -19,58 +20,63 @@
   font-weight: normal;
   src: local("Poppins Bold"), url("/fonts/Poppins-Bold.woff") format("woff");
 }
-
+/* Main container styles */
 .banner {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   text-align: center;
   overflow: hidden;
   position: relative;
 }
 
+/* 3D slider styles */
 .banner .slider {
   position: absolute;
   top: 10%;
   width: 12.5rem;
   height: 15.63rem;
-  left: calc(50% - 6.25rem);
-  transform-style: preserve-3d;
+  left: calc(50% - 6.25rem); /* Center the slider */
+  transform-style: preserve-3d; /* Enable 3D transformations */
   transform: perspective(62.5rem);
-  animation: autoRun 40s linear infinite;
+  animation: autoRun 40s linear infinite; /* Apply the rotation animation */
   z-index: 2;
 }
 
+/* Individual slider item styles */
 .banner .slider .item {
   position: absolute;
-  inset: 0 0 0 0;
+  inset: 0 0 0 0; /* Shorthand for top, right, bottom, left */
+  /* Calculate the rotation based on the item's position and total quantity */
   transform: rotateY(
       calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
     )
-    translateZ(34.38rem);
+    translateZ(34.38rem); /* Push the item out in 3D space */
 }
 
+/* Image styles within slider items */
 .banner .slider .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Keyframe animation for auto-rotation */
 @keyframes autoRun {
   from {
     transform: perspective(62.5rem) rotateX(-12deg) rotateY(0deg);
   }
-
   to {
     transform: perspective(62.5rem) rotateX(-12deg) rotateY(360deg);
   }
 }
 
+/* Content section styles */
 .banner .content {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: min(1400px, 100vw);
+  width: min(1400px, 100vw); /* Responsive width */
   height: max-content;
   padding-bottom: 100px;
   display: flex;
@@ -80,6 +86,7 @@
   z-index: 1;
 }
 
+/* Main heading styles */
 .banner .content h1 {
   font-family: "ICA Rubrik Bold";
   font-size: 16em;
@@ -88,30 +95,35 @@
   position: relative;
 }
 
+/* Create an outline effect for the main heading */
 .banner .content h1::after {
   position: absolute;
   inset: 0 0 0 0;
-  content: attr(data-content);
+  content: attr(data-content); /* Use the data-content attribute value */
   z-index: 2;
-  -webkit-text-stroke: 2px #d2d2d2;
-  color: transparent;
+  -webkit-text-stroke: 2px #d2d2d2; /* Create an outline */
+  color: transparent; /* Make the text transparent to show only the outline */
 }
 
+/* Author section styles */
 .banner .content .author {
   font-family: "Poppins Bold";
   text-align: right;
   max-width: min-content;
 }
 
+/* Description text styles */
 .banner .content .description {
   font-family: "Poppins Regular";
   text-align: right;
 }
 
+/* Author name styles */
 .banner .content h2 {
   font-size: 3em;
 }
 
+/* Background model image styles */
 .banner .content .model {
   background-image: url("/images/model.png");
   width: 100%;
@@ -125,24 +137,32 @@
   z-index: 1;
 }
 
+/* Media queries for responsive design */
 @media screen and (max-width: 1023px) {
+  /* Adjust slider size and position for smaller screens */
   .banner .slider {
     width: 160px;
     height: 200px;
     left: calc(50% - 80px);
   }
+  
+  /* Adjust the 3D transform for smaller slider size */
   .banner .slider .item {
     transform: rotateY(
         calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
       )
       translateZ(300px);
   }
+  
+  /* Adjust heading size and styling for smaller screens */
   .banner .content h1 {
     text-align: center;
     width: 100%;
     text-shadow: 0 10px 20px #000;
     font-size: 7em;
   }
+  
+  /* Adjust author section styling for smaller screens */
   .banner .content .author {
     color: #fff;
     padding: 20px;
@@ -156,17 +176,20 @@
 }
 
 @media screen and (max-width: 767px) {
+  /* Further adjustments for very small screens */
   .banner .slider {
     width: 100px;
     height: 150px;
     left: calc(50% - 50px);
   }
+  
   .banner .slider .item {
     transform: rotateY(
         calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
       )
       translateZ(180px);
   }
+  
   .banner .content h1 {
     font-size: 5em;
   }

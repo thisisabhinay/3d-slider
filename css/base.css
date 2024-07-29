@@ -1,15 +1,22 @@
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Set the background for the entire page */
 body {
   background-color: #d2d2d2;
-  background-image: repeating-linear-gradient(
+  /* Create a grid pattern using repeating linear gradients */
+  background-image: 
+    /* Vertical lines */
+    repeating-linear-gradient(
       to right,
       transparent 0 100px,
       #25283b22 100px 101px
     ),
+    /* Horizontal lines */
     repeating-linear-gradient(
       to bottom,
       transparent 0 100px,
@@ -17,17 +24,18 @@ body {
     );
 }
 
+/* Add a decorative background image to the body */
 body::before {
   position: absolute;
-  width: min(1400px, 90vw);
+  width: min(1400px, 90vw); /* Responsive width */
   top: 10%;
   left: 50%;
   height: 90%;
-  transform: translateX(-50%);
-  content: "";
+  transform: translateX(-50%); /* Center the element */
+  content: ""; /* Required for pseudo-elements */
   background-image: url("/images/bg.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top center;
-  pointer-events: none;
+  pointer-events: none; /* Prevents the pseudo-element from interfering with user interactions */
 }

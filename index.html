@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
+    <!-- Ensures proper rendering and touch zooming for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the base CSS file for general styling -->
     <link href="/css/base.css" rel="stylesheet" />
+    <!-- Link to the slider-specific CSS file -->
     <link href="/css/slider.css" rel="stylesheet" />
     <title>3D Slider - Tech Demo</title>
   </head>
-
   <body>
+    <!-- Main container for the 3D slider and content -->
     <div class="banner">
+      <!-- 3D slider container -->
       <div class="slider" style="--quantity: 10">
+        <!-- Individual slider items -->
+        <!-- Each item has a --position CSS variable to determine its position in the 3D space -->
         <div class="item" style="--position: 1">
           <img src="/images/dragon_1.jpg" alt="dragon 1" />
         </div>
@@ -44,10 +49,13 @@
         </div>
       </div>
 
+      <!-- Content section below the slider -->
       <div class="content">
+        <!-- Main heading with a data attribute for CSS styling -->
         <h1 data-content="CSS ONLY">
           CSS ONLY
         </h1>
+        <!-- Author information -->
         <div class="author">
           <h2>ABHINAY</h2>
           <strong>Web Design</strong>
@@ -55,10 +63,9 @@
             Tech demo of a CSS only 3d slider
           </p>
         </div>
+        <!-- Empty div for additional styling or future content -->
         <div class="model"></div>
       </div>
     </div>
-
   </body>
-
 </html>
