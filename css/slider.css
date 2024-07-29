@@ -13,7 +13,8 @@
   height: 15.63rem;
   left: calc(50% - 6.25rem);
   transform-style: preserve-3d;
-  transform: perspective(62.5rem)
+  transform: perspective(62.5rem);
+  animation: autoRun 30s linear infinite;
 }
 
 .banner .slider .item {
@@ -21,11 +22,21 @@
   inset:  0 0 0 0;
   transform: 
     rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-    translateZ(34.38rem)
+    translateZ(34.38rem);
 }
 
 .banner .slider .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(62.5rem) rotateX(-15deg) rotateY(0deg)
+  }
+
+  to {
+    transform: perspective(62.5rem) rotateX(-15deg) rotateY(360deg)
+  }
 }
